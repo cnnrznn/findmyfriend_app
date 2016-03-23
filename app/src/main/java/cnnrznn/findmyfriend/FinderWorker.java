@@ -25,7 +25,7 @@ import java.util.Arrays;
  */
 public class FinderWorker implements Runnable {
 
-    private static final int BUFSIZE = 256;
+    private static final int BUFSIZE = 195;
     private static final int LOOP_INTERVAL = 500;
 
     private MainActivity mact;
