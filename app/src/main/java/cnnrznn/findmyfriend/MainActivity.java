@@ -44,8 +44,6 @@ public class MainActivity extends Activity
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
-
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     @Override
@@ -67,11 +65,16 @@ public class MainActivity extends Activity
     protected void onStart() {
         super.onStart();
         gac.connect();
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     @Override
     protected void onStop() {
         gac.disconnect();
+
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         super.onStop();
     }
 
